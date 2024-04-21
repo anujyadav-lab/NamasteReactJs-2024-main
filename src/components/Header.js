@@ -8,10 +8,8 @@ const Header = () => {
   const [btn,setBtn]   = useState('login');
 
   useEffect(()=>{
-console.log('useEffect is called')
   },[btn])
 
-  console.log('header comp render')
 
     return (
 
