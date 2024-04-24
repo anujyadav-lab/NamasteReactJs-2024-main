@@ -1,10 +1,12 @@
 import { useState,useEffect } from "react";
 import ShimmerCard from "./ShimmerCard";
 
-const RestaurantMenu = () => {
-    const [resInfo,setResInfo] = useState([]);
-    const [menuInfo,setMenuInfo] = useState([])
 
+const RestaurantMenu = () => {
+    const [resInfo,setResInfo] = useState(null); //ill ask narpat if we put [] 
+    const [menuInfo,setMenuInfo] = useState(null)
+
+console.log(resInfo)
   useEffect(() => {
     fetchMenu();
   }, []); //explain why used empty array.
@@ -23,16 +25,23 @@ const RestaurantMenu = () => {
 
     setResInfo(json?.data?.cards[2]?.card?.card?.info)
 
-    setMenuInfo(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card)
+    setMenuInfo(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
+
+
+    // setMenuInfo(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card)
       
-  };
+  }
+
     if(resInfo === null) return <ShimmerCard/>
 
 // console.log(menuInfo)
 
-  const {name,costForTwoMessage,cuisines,} = resInfo;
+  const {name,costForTwoMessage,cuisines} = resInfo;
 
-//   const{itemCards} = menuInfo;
+  const {itemCards} = menuInfo;
+
+
+
 
   
 
@@ -44,10 +53,10 @@ const RestaurantMenu = () => {
     <h3>{costForTwoMessage}</h3>
     
     <ul>
+        {itemCards.map((item,id) => (
+        <li key={id}>{item.card.info.name} - {item.card.info.price/100}</li>) )}
        
-      <li></li>
-      <li></li>
-      <li></li>
+     
     </ul>
   </div>
 );

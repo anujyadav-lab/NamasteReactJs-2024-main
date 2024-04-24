@@ -44,7 +44,7 @@ element:<Body/>
         // errorElement: <Error />,
       },
       {
-        path: "/resturant/:id",
+        path: "/resturant/:ResId",
         element: <RestaurantMenu />,
       },
     ],
