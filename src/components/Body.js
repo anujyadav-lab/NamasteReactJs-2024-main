@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/MockData";
 import { useState, useEffect } from "react";
-import Card from "./shimmer";
+import Card from "./ShimmerCard";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -58,7 +58,7 @@ const Body = () => {
     <>
           <div className="body">
 
-    (  <div className="filter">
+     <div className="filter">
           <input
             className="searchInput"
             type="text"
@@ -71,7 +71,7 @@ const Body = () => {
           <button className="filter-btn" onClick={handleFilter}>
             Top Rated Restaurant 
           </button>
-      </div>)
+      </div>
 
         <div className="res-container">
           {filteredRestaurant.map((restaurant) => (

@@ -1,4 +1,4 @@
-const Card = () =>{
+const ShimmerCard = () =>{
 
     return <div className="shimmer-cont">
         
@@ -15,4 +15,4 @@ const Card = () =>{
     </div>
 }
 
-export default Card;
+export default ShimmerCard;
