@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Horizontal Scrolling Example</title>
+    <style>
+         .custom-button {
+            background-color: #800080; /* Purple background color */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Padding around the text */
+            font-size: 16px; /* Font size */
+            border: none; /* No border */
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect */
+        .custom-button:hover {
+            background-color: #993399; /* Darker purple on hover */
+        }
+        /* Styles for the container */
+        .container {
+            position: relative; /* Relative positioning for absolute child elements */
+            width: 300px; /* Width of the container */
+            height: 150px; /* Height of the container */
+            overflow: hidden; /* Hide overflow content */
+            border: 1px solid #ccc; /* Border for the container */
+        }
+
+        /* Styles for the content area */
+        .content {
+            display: flex; /* Use flexbox for horizontal scrolling */
+            width: 600px; /* Width of the content area (wider than the container) */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for scrolling */
+        }
+
+        /* Styles for individual items in the content area */
+        .item {
+            width: 100px; /* Width of each item */
+            height: 100px; /* Height of each item */
+            margin: 10px; /* Margin around each item */
+            background-color: lightblue; /* Background color */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Styles for the arrow buttons */
+        .arrow-button {
+            position: absolute; /* Position buttons absolutely */
+            top: 10px; /* Top margin */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 24px; /* Font size */
+            color: #333; /* Text color */
+        }
+
+        /* Position the left arrow button */
+        .arrow-left {
+            right: 40px; /* Right margin */
+        }
+
+        /* Position the right arrow button */
+        .arrow-right {
+            right: 10px; /* Right margin */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Arrow buttons -->
+        <div class="arrow-button arrow-left" onclick="scrollLeft()">&#x25C0;</div> <!-- Left arrow -->
+        <div class="arrow-button arrow-right" onclick="scrollRight()">&#x25B6;</div> <!-- Right arrow -->
+
+        <!-- Content area -->
+        <div class="content" id="content">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+    </div>
+
+    <script>
+        // Function to scroll left
+        function scrollLeft() {
+            var content = document.getElementById('content');
+            content.style.transform = `translateX(${content.offsetLeft + 100}px)`;
+        }
+
+        // Function to scroll right
+        function scrollRight() {
+            var content = document.getElementById('content');
+            content.style.transform = `translateX(${content.offsetLeft - 100}px)`;
+        }
+    </script>
+</body>
+
+</html>

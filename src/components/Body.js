@@ -2,14 +2,19 @@ import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/MockData";
 import { useState, useEffect } from "react";
 import Card from "./ShimmerCard";
+import { Link } from "react-router-dom";
+import WhatsOnYourMind from "./WhatsOnYourMind";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
 
-
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+
+
+
 
   // console.log('anuj')
 
@@ -31,6 +36,9 @@ const Body = () => {
     setFilteredRestaurant(
       json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
+
+
+
   };
 
   const handleFilter = () => {
@@ -40,7 +48,7 @@ const Body = () => {
     setFilteredRestaurant(filteredList);
   };
 
-  const handleSearch = () => {  
+  const handleSearch = () => {
     const filteredRes = restaurantList.filter((res) =>
       res?.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
@@ -56,9 +64,11 @@ const Body = () => {
     </>
   ) : (
     <>
-          <div className="body">
+      <div className="body"> 
 
-     <div className="filter">
+     
+
+        <div className="filter">
           <input
             className="searchInput"
             type="text"
@@ -69,17 +79,26 @@ const Body = () => {
           <button onClick={handleSearch}>search</button>
 
           <button className="filter-btn" onClick={handleFilter}>
-            Top Rated Restaurant 
+            Top Rated Restaurant
           </button>
-      </div>
+
+        </div>
+
+        <div>
+          <WhatsOnYourMind/>
+        </div>
+      
 
         <div className="res-container">
           {filteredRestaurant.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              resData={restaurant.info}
-            />
+            <Link
+              key={restaurant?.info?.id}
+              to={"/resturant/" + restaurant?.info?.id}
+            >
+              <RestaurantCard resData={restaurant.info} />
+            </Link>
           ))}
+
         </div>
       </div>
     </>

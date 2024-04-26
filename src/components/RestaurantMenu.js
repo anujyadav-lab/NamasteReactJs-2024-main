@@ -1,22 +1,26 @@
 import { useState,useEffect } from "react";
 import ShimmerCard from "./ShimmerCard";
-
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
 
 const RestaurantMenu = () => {
     const [resInfo,setResInfo] = useState(null); //ill ask narpat if we put [] 
     const [menuInfo,setMenuInfo] = useState(null)
 
+    const {ResId} = useParams()
+    // console.log(ResId = useParams())
+
 console.log(resInfo)
   useEffect(() => {
     fetchMenu();
-  }, []); //explain why used empty array.
+  },[]);
 
 
   const fetchMenu = async () => {
 
     const data = await fetch(
         
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.61610&lng=73.72860&restaurantId=496036&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER"
+MENU_API+ResId
 
     );
 
@@ -56,7 +60,9 @@ console.log(resInfo)
         {itemCards.map((item,id) => (
         <li key={id}>{item.card.info.name} - {item.card.info.price/100}</li>) )}
        
-     
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
   </div>
 );
