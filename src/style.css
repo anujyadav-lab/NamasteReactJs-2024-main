@@ -167,3 +167,8 @@ background-color: #e1ecce;
     height: 200px;
     
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}

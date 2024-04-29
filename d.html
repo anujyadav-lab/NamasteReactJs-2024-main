@@ -86,17 +86,14 @@
     </div>
 
     <script>
-        // Function to scroll left
-        function scrollLeft() {
-            var content = document.getElementById('content');
-            content.style.transform = `translateX(${content.offsetLeft + 100}px)`;
-        }
+       async function getData() {
+  return await Promise.resolve('I made it!');
+}
 
-        // Function to scroll right
-        function scrollRight() {
-            var content = document.getElementById('content');
-            content.style.transform = `translateX(${content.offsetLeft - 100}px)`;
-        }
+const data = getData();
+console.log(data)
+
+
     </script>
 </body>
 
