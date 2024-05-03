@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
-import { API_MAIN, IMGG_URL } from "../utils/constants";
-
-
+import { IMGG_URL } from "../utils/constants";
+import useWhatsOnYourMind from "../utils/useWhatsOnYourMind"
 const WhatsOnYourMind = () => {
-  const [dish, setDish] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(
-      API_MAIN
-    );
-
-    const json = await data.json();
-    setDish(json?.data?.cards[0]?.card?.card?.imageGridCards?.info); 
-  }; //i can import this from body itself.ill try today.
+  const dish = useWhatsOnYourMind();
 
   return (
     <>
