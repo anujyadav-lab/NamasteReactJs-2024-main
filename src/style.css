@@ -187,3 +187,26 @@ background-color: #f2f7ea;
     cursor: pointer;
 
 }
+
+.pizza-card{
+
+    border: 2px solid blue;
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    /* justify-content: s; */
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    /* padding: 10px; */
+    margin: 10px; 
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap; 
+    justify-content: center;   
+
+}
+.pizzacardImg{
+    width: 100%;
+    height: 40%;
+}
