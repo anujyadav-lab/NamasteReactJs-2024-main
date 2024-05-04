@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
 /* border: 2px solid black; */
-background-color: rgb(169, 242, 206);
+background-color:#f2f7ea;
 
 }
 
@@ -41,7 +41,7 @@ margin: 10px;
 }
 
 .body{
-    background-color: #e1ecce;
+    background-color: #f2f7ea;
     padding-bottom: 1px;
     padding-top: 1px;
 
@@ -70,7 +70,7 @@ margin: 10px;
 .filter{
 display: flex;
 justify-content: center;
-background-color: #e1ecce;
+background-color: #f2f7ea;
 
 
 }
@@ -152,7 +152,7 @@ background-color: #e1ecce;
     padding: 8px;
     margin: 20px;
     border-radius: 10px;
-    background-color: rgba(237, 234, 234, 0.889);
+    background-color:#f2f7ea;
 }
 
 .dishContainer{
@@ -171,4 +171,19 @@ background-color: #e1ecce;
 .user-card{
     padding: 10px;
     border: 1px solid black;
+}
+
+.whatsonyourmind{
+background-color: #f2f7ea;
+
+
+}
+
+.whatsonyourmind:hover{
+    border: 1px solid black;
+}
+.dishContainer img{
+    background-color: #7ec310;
+    cursor: pointer;
+
 }

@@ -39,7 +39,7 @@ const Body = () => {
           </button>
         </div>
 
-        <div>
+        <div className="whatsonyourmind">
           <WhatsOnYourMind />
         </div>
 

@@ -40,6 +40,10 @@ const Header = () => {
 
             </li>
             <li>
+
+              <Link to="/grocery">Grocery</Link>
+            </li>
+            <li>
               <Link to="/contact">Contact US</Link>
             </li>
             <li>Cart</li>

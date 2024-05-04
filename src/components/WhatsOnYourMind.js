@@ -9,10 +9,13 @@ const WhatsOnYourMind = () => {
       <h2>What's on your mind?</h2>
 {console.log(dish.imageId)}
       <div className="dishContainer">
-      {console.log(dish.imageId)}
+    
+
 
         {dish.map((res) => (
-          <img  alt="error" key={res?.id} src={IMGG_URL + res?.imageId} />
+            
+       <img  alt="error" key={res?.id} src={IMGG_URL + res?.imageId} />
+
         ))}
       </div>
     </>
